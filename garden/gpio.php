@@ -10,6 +10,8 @@
 // * "gpio mode i in" => set relay #i to output mode (active) 
 
 // LAN : This page can be called as simple GET PHP with a few params
+//  ex : activate relay 7 for 3 seconds : {{path}}/gpio.php?mode=in&timer=3
+//  ex : deactivate relay 7 
 // GUI : This page is requested by the JavaScript, it updates the pin's mode
 
 // Getting and using values
