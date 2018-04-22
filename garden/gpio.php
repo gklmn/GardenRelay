@@ -1,7 +1,18 @@
 <?php
 
-//This page is requested by the JavaScript, it updates the pin's mode
-//Getting and using values
+
+// PHP Script meant to manage a low level trigger relay on the raspberry
+
+// Low level trigger can NOT be turned on/off with "gpio write i 0" or "1"
+// low (0) output will still activate the relay
+// so instead i have to use the pin mode : 
+// * "gpio mode i in" => set relay #i to input mode (inactive) 
+// * "gpio mode i in" => set relay #i to output mode (active) 
+
+// LAN : This page can be called as simple GET PHP with a few params
+// GUI : This page is requested by the JavaScript, it updates the pin's mode
+
+// Getting and using values
 if (isset ( $_GET["mode"] )) {
 	$mode = strip_tags ($_GET["mode"]);
 	$pinIndex = 7;
